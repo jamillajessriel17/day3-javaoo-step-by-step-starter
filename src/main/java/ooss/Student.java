@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Student extends Person {
     private int klassNumber;
+    private boolean isLeader =false;
     public Student(int id, String name, int age) {
         super(id, name, age);
     }
@@ -39,6 +40,6 @@ public class Student extends Person {
     }
 
     public boolean isIn(Klass klass) {
-   return klass.getNumber() == klassNumber;
+     return klass.getNumber() == klassNumber;
     }
 }
