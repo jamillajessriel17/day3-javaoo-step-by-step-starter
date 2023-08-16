@@ -7,7 +7,7 @@ public class Klass {
     private final int number;
 
     public int getNumber() {
-        return number;
+        return this.number;
     }
 
     public Klass(int number) {
