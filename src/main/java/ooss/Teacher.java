@@ -7,6 +7,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Teacher extends Person {
+
+    private final List<Integer> klassNumbers = new ArrayList<>();
+
     public Teacher(int id, String name, int age) {
         super(id, name, age);
     }
@@ -24,5 +27,13 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         return String.format("My name is %s. I am %s years old. I am a teacher.", getName(), getAge());
+    }
+
+    public void assignTo(Klass klass) {
+        klassNumbers.add(klass.getNumber());
+    }
+
+    public boolean belongsTo(Klass klass) {
+       return klassNumbers.contains(klass.getNumber());
     }
 }
