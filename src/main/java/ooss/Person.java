@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class Person {
 
-
     private final int id;
     private final String name;
     private final int age;
@@ -13,6 +12,14 @@ public class Person {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     @Override
