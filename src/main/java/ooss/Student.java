@@ -4,7 +4,14 @@ import java.util.Objects;
 
 public class Student extends Person {
     private int klassNumber;
-    private boolean isLeader =false;
+
+    private boolean isLeader = false;
+
+
+    public void setLeader(boolean leader) {
+        isLeader = leader;
+    }
+
     public Student(int id, String name, int age) {
         super(id, name, age);
     }
@@ -17,9 +24,10 @@ public class Student extends Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person =(Person) o;
+        Person person = (Person) o;
         return getId() == person.getId();
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(getId());
@@ -28,18 +36,20 @@ public class Student extends Person {
     @Override
     public String introduce() {
         String aStudent = " I am a student.";
-        if (klassNumber == 0){
+        if (klassNumber == 0) {
             return super.introduce().concat(aStudent);
+        } else if (!isLeader) {
+            return super.introduce().concat(aStudent).concat(String.format(" I am in class %s.", klassNumber));
         }
-        return super.introduce().concat(aStudent).concat(String.format(" I am in class %s.",klassNumber));
+        return super.introduce().concat(aStudent).concat(String.format(" I am the leader of class %s.", klassNumber));
     }
 
     public void join(Klass klass) {
-         klassNumber = klass.getNumber();
+        klassNumber = klass.getNumber();
 
     }
 
     public boolean isIn(Klass klass) {
-     return klass.getNumber() == klassNumber;
+        return klass.getNumber() == klassNumber;
     }
 }

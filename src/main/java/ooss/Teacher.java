@@ -1,7 +1,6 @@
 package ooss;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -9,6 +8,10 @@ import java.util.stream.Collectors;
 public class Teacher extends Person {
 
     private final List<Integer> klassNumbers = new ArrayList<>();
+
+    public List<Integer> getKlassNumbers() {
+        return klassNumbers;
+    }
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);

@@ -22,9 +22,6 @@ public class Person {
         return name;
     }
 
-    public int getAge() {
-        return age;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -39,7 +36,7 @@ public class Person {
         return Objects.hash(id, age);
     }
 
-    public String introduce(){
+    public String introduce() {
         return String.format("My name is %s. I am %s years old.", name, age);
     }
 }
