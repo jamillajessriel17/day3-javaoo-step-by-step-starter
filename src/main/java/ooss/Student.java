@@ -3,9 +3,13 @@ package ooss;
 import java.util.Objects;
 
 public class Student extends Person {
-    private int klassNumber = 0;
+    private int klassNumber;
     public Student(int id, String name, int age) {
         super(id, name, age);
+    }
+
+    public int getKlassNumber() {
+        return klassNumber;
     }
 
     @Override
@@ -31,6 +35,7 @@ public class Student extends Person {
 
     public void join(Klass klass) {
          klassNumber = klass.getNumber();
+
     }
 
     public boolean isIn(Klass klass) {
