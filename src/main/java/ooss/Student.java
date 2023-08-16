@@ -22,10 +22,11 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
+        String aStudent = " I am a student.";
         if (klassNumber == 0){
-            return String.format("My name is %s. I am %s years old. I am a student.", getName(), getAge());
+            return super.introduce().concat(aStudent);
         }
-        return String.format("My name is %s. I am %s years old. I am a student. I am in class %s.", getName(), getAge(), klassNumber);
+        return super.introduce().concat(aStudent).concat(String.format(" I am in class %s.",klassNumber));
     }
 
     public void join(Klass klass) {
