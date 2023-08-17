@@ -39,7 +39,7 @@ public class Klass implements KlassIntroduction {
 
         return student.getId() == studentLeaderId;
     }
-
+    //TODO: student name "Tom" should not be hard coded.
     @Override
     public void attach(Teacher teacher) {
         System.out.printf("I am %s, teacher of Class %s. I know Tom become Leader.%n", teacher.getName(),
